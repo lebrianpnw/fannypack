@@ -5,7 +5,7 @@ import { HowitworksComponent } from './howitworks/howitworks.component';
 
 const routes: Routes = [
     { path: '', component: HowitworksComponent },
-    { path: 'postcard', component: PostcardsComponent },
+    { path: 'postcards', component: PostcardsComponent },
 
 ];
 

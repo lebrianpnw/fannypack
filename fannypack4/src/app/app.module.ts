@@ -7,6 +7,7 @@ import { routing } from './app.routing';
 
 import { AppComponent } from './app.component';
 import { PostcardsComponent } from './postcards/postcards.component';
+import { PostcardGridComponent } from './postcards/postcard-grid/postcard-grid.component';
 import { HowitworksComponent } from './howitworks/howitworks.component';
 
 import { PostcardsService } from './postcard-service.service';
@@ -17,7 +18,8 @@ import { PostcardsService } from './postcard-service.service';
   declarations: [
     AppComponent,
     PostcardsComponent,
-    HowitworksComponent
+    HowitworksComponent,
+    PostcardGridComponent
   ],
   imports: [
     BrowserModule,

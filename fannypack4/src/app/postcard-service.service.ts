@@ -14,4 +14,5 @@ export class PostcardsService {
         /*    return this.http.get( '/app/list/')*/
         .pipe(map(response => {response.json()}));
   }
+
 }
