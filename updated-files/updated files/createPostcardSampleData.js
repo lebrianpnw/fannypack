@@ -169,18 +169,3 @@ postcardsCollection.insert(
     activityCity: "Seattle"
 }
 )
-
-
-db = db.getSiblingDB('postcardsSample')
-db.createCollection('collections')
-collectionsCollection = db.getCollection("collections")
-collectionsCollection.remove({})
-collectionsCollection.insert(
-{
-    collectionID: 1,
-    userID: 1,
-    title: "Seattle Trip!",
-    //imageURL: string,
-    description: "Places to visit in Seattle",
-}
-)
