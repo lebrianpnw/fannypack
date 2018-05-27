@@ -1,11 +1,14 @@
 import { Routes, RouterModule } from '@angular/router';
-import { PostcardsComponent } from './postcards/postcards.component';
 import { HowitworksComponent } from './howitworks/howitworks.component';
+import { PostcardsComponent } from './postcards/postcards.component';
+import { CollectionsComponent } from './collections/collections.component';
 
 
 const routes: Routes = [
     { path: '', component: HowitworksComponent },
     { path: 'postcards', component: PostcardsComponent },
+    { path: 'collections', component: CollectionsComponent },
+    
 
 ];
 

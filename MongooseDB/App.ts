@@ -8,6 +8,7 @@ import * as bodyParser from 'body-parser';
 //var Q = require('q');
 
 import {PostcardModel} from './model/PostcardModel';
+import {CollectionModel} from './model/CollectionModel';
 import {DataAccess} from './DataAccess';
 
 // Creates and configures an ExpressJS web server.
@@ -16,6 +17,7 @@ class App {
   // ref to Express instance
   public expressApp: express.Application;
   public Postcards:PostcardModel;
+  public Collections:CollectionModel;
   public idGenerator:number;
 
   //Run configuration methods on the Express instance.
@@ -25,6 +27,7 @@ class App {
     this.routes();
     this.idGenerator = 100;
     this.Postcards = new PostcardModel();
+    this.Collections = new CollectionModel();
   }
 
   // Configure Express middleware.
@@ -68,9 +71,27 @@ class App {
       this.Postcards.retrievePostcardDetails(res, {postcardID: id});
    });
 
+   router.post('/app/collections/', (req, res) => {
+    console.log(req.body);
+    var jsonObj = req.body;
+    jsonObj.postcardID = this.idGenerator;
+    this.Collections.model.create([jsonObj], (err) => {
+        if (err) {
+            console.log('object creation failed');
+        }
+    });
+    res.send(this.idGenerator.toString());
+    this.idGenerator++;
+});
+
     router.get('/app/postcards/', (req, res) => {
         console.log('Query All postcards');
         this.Postcards.retrieveAllPostcards(res);
+    });
+
+    router.get('/app/collections/', (req, res) => {
+        console.log('Query All collections');
+        this.Collections.retrieveAllCollections(res);
     });
 
     this.expressApp.use('/', router);

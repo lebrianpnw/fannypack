@@ -6,11 +6,13 @@ import { APP_BASE_HREF } from '@angular/common';
 import { routing } from './app.routing';
 
 import { AppComponent } from './app.component';
+import { HowitworksComponent } from './howitworks/howitworks.component';
 import { PostcardsComponent } from './postcards/postcards.component';
 import { PostcardGridComponent } from './postcards/postcard-grid/postcard-grid.component';
-import { HowitworksComponent } from './howitworks/howitworks.component';
+import { CollectionsComponent } from './collections/collections.component';
 
 import { PostcardsService } from './postcard-service.service';
+import { CollectionsService } from './collection-service.service';
 
 
 
@@ -19,7 +21,8 @@ import { PostcardsService } from './postcard-service.service';
     AppComponent,
     PostcardsComponent,
     HowitworksComponent,
-    PostcardGridComponent
+    PostcardGridComponent,
+    CollectionsComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,7 @@ import { PostcardsService } from './postcard-service.service';
     HttpModule,
     routing
   ],
-  providers: [PostcardsService],
+  providers: [PostcardsService, CollectionsService],
 
       /* {provide: APP_BASE_HREF, useValue: '/'}, PostcardsService], */
   bootstrap: [AppComponent]

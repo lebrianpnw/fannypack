@@ -9,8 +9,8 @@ import IPostcardModel from '../share/IPostcardModel';
 })
 export class PostcardsComponent implements OnInit {
 
-  //postcards: IPostcardModel[];
-  postcards: any; 
+  postcards: IPostcardModel[];
+  //postcards: any; 
 
   constructor(postcard$: PostcardsService) { 
     postcard$.getPostcards()

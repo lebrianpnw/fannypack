@@ -1,1 +1,22 @@
-<p> YO! </p>
+<div class="panel panel-heading" style="border-width: 1px; border-style:solid; border-color:gray;" *ngFor="let result of postcards">
+    <!-- Default panel contents -->
+
+    <p>{{result.postcardID}}</p>
+    <p>{{result.title}}</p>
+    <p>{{result.description}}</p>
+    <p>Rating: {{result.rating}}</p>
+    <p>Cost: {{result.cost}}</p>
+    <p>Location: {{result.activityLocation}}</p>
+    <p>City: {{result.activityCity}}</p>
+
+    postcardID: Number,
+    userID: Number,
+    title: String,
+    imageURL: String,
+    description: String,
+    rating: Number,
+    cost: Number,
+    activityLocation: String,
+    activityCity: String
+</div>
+
