@@ -10,7 +10,7 @@ export class PostcardsService {
   constructor(private http: Http) { }
 
   getPostcards() {
-    return this.http.get( 'http://localhost:8080/json/postcards.json')
+    return this.http.get( 'http://localhost:8080/app/postcards/')
         /*    return this.http.get( '/app/list/')*/
         .pipe(map(response => {response.json()}));
   }

@@ -1,4 +1,10 @@
-<!--<div class="instructionsContainer" id="instructionsContainer">-->
+<div class="switchViewContainer" id="instructionsButton">
+  <a [routerLink]="['/postcards']">
+    <button type="button">Get Started!</button>
+  </a>
+</div>
+
+<div class="instructionsContainer" id="instructionsContainer">
   <div>
     <h1>How It Works</h1>
     <div class="rowInstructions">
@@ -38,10 +44,6 @@
           you can take your to-do bucket list on your next adventure.
         </p>
       </div>
-
-      <p>
-        <a [routerLink]="['/postcards']" class="btn btn-lg btn-primary" role="button">Let's get started!</a>
-      </p>
-    </div>
   </div>
+</div>
   
