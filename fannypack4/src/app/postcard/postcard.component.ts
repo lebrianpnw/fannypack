@@ -6,8 +6,8 @@ import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-postcard',
-  templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css']
+  templateUrl: './postcard.component.html',
+  styleUrls: ['./postcard.component.css']
 })
 
 export class PostcardComponent implements OnInit {
