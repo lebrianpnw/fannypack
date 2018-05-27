@@ -21,16 +21,6 @@ export class PostcardsComponent implements OnInit {
     );
   }
 
-  /*
-  constructor(list$: PostcardsService) {
-    list$.getPostcards()
-    .subscribe(
-      result => this.postcards = result,
-      () => {},
-      () => console.log('REST call:' + this.postcards)
-    );
-   }*/
-
   ngOnInit() {
   }
 
