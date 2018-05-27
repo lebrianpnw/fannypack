@@ -9,9 +9,19 @@ import IPostcardModel from '../share/IPostcardModel';
 })
 export class PostcardsComponent implements OnInit {
 
-  postcards: IPostcardModel[];
-  //postcards: any; 
+  //postcards: IPostcardModel[];
+  postcards: any; 
 
+  constructor(postcard$: PostcardsService) { 
+    postcard$.getPostcards()
+    .subscribe(
+      result => this.postcards = result,
+      () => {},
+      () => console.log('REST call:' + this.postcards)
+    );
+  }
+
+  /*
   constructor(list$: PostcardsService) {
     list$.getPostcards()
     .subscribe(
@@ -19,7 +29,7 @@ export class PostcardsComponent implements OnInit {
       () => {},
       () => console.log('REST call:' + this.postcards)
     );
-   }
+   }*/
 
   ngOnInit() {
   }

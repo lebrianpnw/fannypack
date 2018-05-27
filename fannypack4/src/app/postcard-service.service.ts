@@ -3,7 +3,6 @@ import { Http } from '@angular/http';
 import { map } from 'rxjs/operators';
 
 
-
 @Injectable()
 export class PostcardsService {
 
@@ -11,8 +10,7 @@ export class PostcardsService {
 
   getPostcards() {
     return this.http.get( 'http://localhost:8080/app/postcards/')
-        /*    return this.http.get( '/app/list/')*/
-        .pipe(map(response => {response.json()}));
+        .pipe(map(response => response.json()));
   }
 
 }
