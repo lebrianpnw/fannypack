@@ -1,0 +1,13 @@
+<div class="collectionsContainer">
+    <div class="collectionsRow" >
+        <div class="collectionsFormat" *ngFor="let result of collections">
+            <div class="collectionsContent">
+              <img src="{{result.imageURL}}" width="850px"/>
+              <div class="collectionDescription"> 
+                  <p>{{result.collectionID}} - {{result.title}}</p>
+                  <p>{{result.description}}</p>
+              </div>   
+            </div>
+        </div>
+    </div>
+</div>
