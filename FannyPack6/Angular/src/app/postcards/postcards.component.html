@@ -1,7 +1,7 @@
 <div class="postCardContainer">
     <div class="postCardRow" >
         <div class="postCardFormat" style="text-align: center" *ngFor="let result of postcards">
-            <a [routerLink]="['/postcards/' + result.postcardID]">
+            <a [routerLink]="['/postcards/' + result.postcardID]" target="_blank">
             <div class="postCardContent">
             <img src="{{result.imageURL}}" width="350px" height="350px" id="postcardImage"/>
                 <div class="overlay">
