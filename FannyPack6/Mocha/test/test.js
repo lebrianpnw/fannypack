@@ -15,7 +15,7 @@ if (!global.Promise) {
   chai.request.addPromises(q.Promise);
 }
 
-describe('Fannypack Postcard Result', function () {
+describe('Fannypack List Postcard Result', function () {
 	this.enableTimeouts(false)
 
 	var requestResult;
