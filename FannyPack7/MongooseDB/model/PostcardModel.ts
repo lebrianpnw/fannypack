@@ -37,6 +37,7 @@ class PostcardModel {
     public retrieveAllPostcards(response:any): any {
         var query = this.model.find({});
         query.exec( (err, itemArray) => {
+            console.log(itemArray.json);
             response.json(itemArray) ;
         });
     }
