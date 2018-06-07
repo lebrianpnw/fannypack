@@ -66,11 +66,6 @@ var App = /** @class */ (function () {
             res.send(_this.idGenerator.toString());
             _this.idGenerator++;
         });
-        router.get('/app/collections/:collectionID', function (req, res) {
-            var id = req.params.collectionID;
-            console.log('Query single list with id: ' + id);
-            _this.Collections.retrieveCollectionDetails(res, { collectionID: id });
-        });
         router.get('/app/postcards/', function (req, res) {
             console.log('Query All postcards');
             _this.Postcards.retrieveAllPostcards(res);

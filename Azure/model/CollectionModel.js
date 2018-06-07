@@ -27,12 +27,6 @@ var CollectionModel = /** @class */ (function () {
             response.json(itemArray);
         });
     };
-    CollectionModel.prototype.retrieveCollectionDetails = function (response, filter) {
-        var query = this.model.findOne(filter);
-        query.exec(function (err, itemArray) {
-            response.json(itemArray);
-        });
-    };
     return CollectionModel;
 }());
 exports.CollectionModel = CollectionModel;

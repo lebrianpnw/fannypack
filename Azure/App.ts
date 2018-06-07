@@ -82,14 +82,8 @@ class App {
     });
     res.send(this.idGenerator.toString());
     this.idGenerator++;
-	});
+});
 
-	router.get('/app/collections/:collectionID', (req, res) => {
-      var id = req.params.collectionID;
-     console.log('Query single list with id: ' + id);
-      this.Collections.retrieveCollectionDetails(res, {collectionID: id});
-   });
-   
     router.get('/app/postcards/', (req, res) => {
         console.log('Query All postcards');
         this.Postcards.retrieveAllPostcards(res);

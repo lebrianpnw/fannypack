@@ -28,7 +28,6 @@ var PostcardModel = /** @class */ (function () {
     PostcardModel.prototype.retrieveAllPostcards = function (response) {
         var query = this.model.find({});
         query.exec(function (err, itemArray) {
-            console.log(itemArray.json);
             response.json(itemArray);
         });
     };
