@@ -36,13 +36,13 @@ class CollectionModel {
             response.json(itemArray) ;
         });
     }
-/*
+
     public retrieveCollectionDetails(response:any, filter:Object)
     {
         var query = this.model.findOne(filter);
         query.exec( (err, itemArray) => {
             response.json(itemArray);
         });
-    }*/
+	}
 }
 export {CollectionModel};
