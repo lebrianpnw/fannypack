@@ -29,7 +29,7 @@ hr {
 
 /* Header Section */
 .headerContainer {
-    background-image: linear-gradient(rgba(66, 66, 66, 0.7), rgba(66, 66, 66, 0.7)), url("src/assets/images/searchCoverPhoto.jpg");
+    background-image: linear-gradient(rgba(66, 66, 66, 0.7), rgba(66, 66, 66, 0.7)), url("https://goo.gl/DUyFpP");
     background-repeat: no-repeat;
     background-size: cover;
     padding: 0px;
