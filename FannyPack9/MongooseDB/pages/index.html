@@ -1,0 +1,141 @@
+<html>
+	<head> 
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<link rel="stylesheet" href="main.css">
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
+        integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+			
+	</head>
+	</head>
+	<body onload="initXHR('home', null)">
+			<!-- HOME SECTION -->
+			<div class="headerContainer" id="home">
+				<img id="logo" src="images/logo.png" alt="" height="70"/>
+				<button type="button">Log In</button>
+				<button type="button">Collections</button>
+				<button type="button">Postcards</button>
+				<button type="button">Post</button>
+				<div class = "searchContainer">
+					<input type="text" placeholder="Search a location...">
+					<button type="submit"><i class="fa fa-search" id="searchIcon"></i></button>
+				</div>
+			</div>
+
+			<!-- INSTRUCTIONS/POP DESTINATION SECTION -->
+			<div class="switchViewContainer" id="instructionsButton">
+				<a href="javascript:initXHR('instructions', null)">
+					<button type="button">See How It Works!</button>
+				</a>
+			</div>
+			<div class="switchViewContainer" id="popularDestinationsButton">
+				<a href="javascript:initXHR('popularDestinations', null)">
+					<button type="button">View Destinations!</button>
+				</a>
+			</div>
+
+			<!-- INSTRUCTIONS SECTION -->
+			<div class="instructionsContainer" id="instructionsContainer">
+				<h1>How It Works</h1>
+				<div class="rowInstructions">
+					<div class="instructionBox">
+						<h2>Step 1</h2>
+						<i class="fas fa-search"></i>
+						<hr/>
+						<p>
+							Want to plan your next adventure? Enter a city you want to 
+							travel to in the search bar above.
+						</p>
+					</div>
+					<div class="instructionBox">
+						<h2>Step 2</h2>
+						<i class="fas fa-binoculars"></i>
+						<hr/>
+						<p>
+							Discover postcards posted by other travelers, like yourself. 
+							Feel free to post your own as well!
+						</p>
+					</div>
+					<div class="instructionBox">
+						<h2>Step 3</h2>
+						<i class="far fa-bookmark"></i>
+						<hr/>
+						<p>
+							Add postcards to your collection of items. Or,
+							view collections that other travelers have previously created.
+						</p>
+					</div>
+					<div class="instructionBox">
+						<h2>Step 4</h2>
+						<i class="fas fa-clipboard-list"></i>
+						<hr/>
+						<p>
+							Export a collection to a printable document, that way 
+							you can take your to-do bucket list on your next adventure.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<!--- POSTCARDS TO LOAD -->
+			<div class = "postCardContainer" id="postcards"></div>
+
+			<!-- POPULAR DESTINATIONS SECTION -->
+			<div class="popDestinationContainer" id="popDestinationContainer">
+				<h1>Popular Destinations</h1>
+				<div class="destinationCollage"> 
+			
+				<!-- Row 1 -->
+			<
+				<a href="javascript:initXHR('showPostCard', null)">
+					<img src="images/popDestinations/1.jpg" alt="" height="270" width="270"/>
+				</a>
+				<img src="images/popDestinations/2.jpg" alt="" height="270" width="270"/>
+				<img src="images/popDestinations/3.jpg" alt="" height="270" width="270"/>
+				<img src="images/popDestinations/4.jpg" alt="" height="270" width="270"/>
+				<img src="images/popDestinations/5.jpg" alt="" height="270" width="270"/>
+			
+				<!-- Row 2 -->
+			
+				<img src="images/popDestinations/6.jpg" alt="" height="270" width="270"/>
+				<img src="images/popDestinations/7.jpg" alt="" height="270" width="270"/>
+				<img src="images/popDestinations/8.jpg" alt="" height="270" width="270"/>
+				<img src="images/popDestinations/9.jpg" alt="" height="270" width="270"/>
+				<img src="images/popDestinations/10.jpg" alt="" height="270" width="270"/> 
+				</div>
+			</div>
+		     
+
+			<!-- POSTCARD SECTION-->
+			<div class = "postCardContainer" id="postCardContainer">
+					<img src="images/popDestinations/1.jpg" alt="" height="270" width="270"/>
+					<h1>Bahamas</h1>
+					<p>
+						Desc: Enjoy a relaxing day on the beach getting a nice tan. 
+					</p>
+					<p>
+						Rating: 5/5
+					</p>
+					<p>
+						Price: $0
+					</p>
+			</div>
+
+			
+		</div>
+			<!-- FOOTER SECTION -->
+			<div class="footerContainer" id="footerContainer">
+				<img src="images/logo.png" alt="" height="70"/>
+				<p>Copyright 2018</p>
+			</div>
+	
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src="script.js"></script>
+	</body>
+</html>
