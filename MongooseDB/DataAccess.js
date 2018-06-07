@@ -15,7 +15,8 @@ var DataAccess = /** @class */ (function () {
         this.mongooseInstance = Mongoose.connect(this.DB_CONNECTION_STRING);
         return this.mongooseInstance;
     };
-    DataAccess.DB_CONNECTION_STRING = 'mongodb://dbAdmin:test@localhost:3000/postcardsSample?authSource=admin';
+    //static DB_CONNECTION_STRING:string = 'mongodb://dbAdmin:test@localhost:3000/postcardsSample?authSource=admin';
+    DataAccess.DB_CONNECTION_STRING = 'mongodb://admin:password1@ds016718.mlab.com:16718/fannypackdb';
     return DataAccess;
 }());
 exports.DataAccess = DataAccess;

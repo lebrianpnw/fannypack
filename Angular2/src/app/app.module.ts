@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { HowitworksComponent } from './howitworks/howitworks.component';
 import { PostcardsComponent } from './postcards/postcards.component';
 import { PostcardComponent } from './postcard/postcard.component';
-//import { PostcardGridComponent } from './postcards/postcard-grid/postcard-grid.component';
+import { PostcardGridComponent } from './postcards/postcard-grid/postcard-grid.component';
 import { CollectionsComponent } from './collections/collections.component';
 
 import { PostcardsService } from './postcard-service.service';
@@ -24,7 +24,7 @@ import { CollectionComponent } from './collection/collection.component';
     PostcardsComponent,
     PostcardComponent,
     HowitworksComponent,
-    //PostcardGridComponent,
+    PostcardGridComponent,
     CollectionsComponent,
     CollectionComponent
   ],
