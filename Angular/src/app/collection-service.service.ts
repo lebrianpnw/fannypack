@@ -9,12 +9,12 @@ export class CollectionsService {
   constructor(private http: Http) { }
 
   getCollections() {
-    return this.http.get( 'http://localhost:8080/app/collections/')
+    return this.http.get( './app/collections/')
         .pipe(map(response => response.json()));
   }
 
   getCollection(index: Number) {
-    return this.http.get( 'http://localhost:8080/app/collections/' + index)
+    return this.http.get( './app/collections/' + index)
     .pipe(map(response => response.json()));
   }
 

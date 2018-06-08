@@ -6,6 +6,7 @@ import { PostcardComponent } from './postcard/postcard.component';
 import { CollectionComponent } from './collection/collection.component';
 
 
+
 const routes: Routes = [
     { path: '', component: HowitworksComponent },
     { path: 'postcards', component: PostcardsComponent },
@@ -14,4 +15,4 @@ const routes: Routes = [
     { path: 'collections/:id', component: CollectionComponent}
 ];
 
-export const routing = RouterModule.forRoot(routes);
+export const routing = RouterModule.forRoot(routes, {useHash:true});
