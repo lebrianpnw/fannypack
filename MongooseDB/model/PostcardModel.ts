@@ -25,7 +25,8 @@ class PostcardModel {
                 rating: Number,
                 cost: Number,
                 activityLocation: String,
-                activityCity: String
+                activityCity: String,
+                owner: String
             }, {collection: 'postcards'}
         );
     }
@@ -34,8 +35,8 @@ class PostcardModel {
         this.model = mongooseConnection.model<IPostcardModel>("Postcards", this.schema);
     }
 
-    public retrieveAllPostcards(response:any): any {
-        var query = this.model.find({});
+    public retrieveAllPostcards(response:any, filter:Object): any {
+        var query = this.model.find({filter});
         query.exec( (err, itemArray) => {
             response.json(itemArray) ;
         });

@@ -19,7 +19,8 @@ var PostcardModel = /** @class */ (function () {
             rating: Number,
             cost: Number,
             activityLocation: String,
-            activityCity: String
+            activityCity: String,
+            owner: String
         }, { collection: 'postcards' });
     };
     PostcardModel.prototype.createModel = function () {

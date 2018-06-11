@@ -10,5 +10,6 @@ interface IPostcardModel extends Mongoose.Document {
     cost: number;
     activityLocation: string;
     activityCity: string;
+    owner: string;
 }
 export {IPostcardModel};

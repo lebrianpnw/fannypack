@@ -10,11 +10,15 @@
     <button type="button">Collections</button>
   </a>
 
-  <a [routerLink]="['/postcards']">
+  <a [routerLink]="['/postcards/:owner']">
     <button type="button">Postcards</button>
   </a>
 
   <button type="button">Post</button>
+
+  <a href="https://fannypack.azurewebsites.net/auth/google">
+    <button type="button">Login</button>
+  </a>
   
   <div class = "searchContainer">
     <input type="text" placeholder="Search a location...">

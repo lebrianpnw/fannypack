@@ -10,6 +10,7 @@ import { CollectionComponent } from './collection/collection.component';
 const routes: Routes = [
     { path: '', component: HowitworksComponent },
     { path: 'postcards', component: PostcardsComponent },
+    { path: 'postcards/:owner', component: PostcardsComponent },
     { path: 'collections', component: CollectionsComponent },
     { path: 'postcards/:id', component: PostcardComponent },
     { path: 'collections/:id', component: CollectionComponent}

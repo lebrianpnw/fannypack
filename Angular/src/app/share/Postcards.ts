@@ -8,4 +8,5 @@ rating: number;
 cost: number;
 activityLocation: string;
 activityCity: string;
+owner: string;
 }

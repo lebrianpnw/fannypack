@@ -47,6 +47,8 @@ class App {
     this.expressApp.use(passport.session());
   }
 
+
+
   private validateAuth(req, res, next):void {
     if (req.isAuthenticated()) { console.log("user is authenticated"); return next(); }
     console.log("user is not authenticated");
@@ -69,7 +71,6 @@ class App {
             }
         )
     );
-
 
     router.use(function (req, res, next) {
         res.header("Access-Control-Allow-Origin", "*");
@@ -128,7 +129,7 @@ class App {
    
     router.get('/app/postcards/', this.validateAuth, (req, res) => {
         console.log('Query All postcards');
-        this.Postcards.retrieveAllPostcards(res, { 'google.id' : profile.id });
+        this.Postcards.retrieveAllPostcards(res);
     });
 
     router.get('/app/collections/', this.validateAuth, (req, res) => {

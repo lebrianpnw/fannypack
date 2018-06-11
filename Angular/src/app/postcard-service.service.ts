@@ -16,6 +16,11 @@ export class PostcardsService {
   getPostcard(index: Number) {
     return this.http.get( './app/postcards/' + index)
     .pipe(map(response => response.json()));
+  } 
+  
+  getUserPostcard(owner: String) {
+    return this.http.get( './app/postcards/' + owner)
+    .pipe(map(response => response.json()));
   }
 
 }
