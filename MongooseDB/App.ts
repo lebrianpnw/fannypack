@@ -4,7 +4,8 @@ import * as logger from 'morgan';
 import * as mongodb from 'mongodb';
 import * as url from 'url';
 import * as bodyParser from 'body-parser';
-import * as session from 'express-session'
+import * as session from 'express-session';
+
 //var MongoClient = require('mongodb').MongoClient;
 //var Q = require('q');
 
