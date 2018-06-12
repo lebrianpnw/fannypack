@@ -1,27 +1,38 @@
-# Fannypack
+This directory contains one express servers:
+* Server.js + App.js - Encapsulated Node/Express web server w/ Mongo Access
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.5.
+File content:
+* Server.ts - based http server
+* App.ts - express server
+* DbClient.ts - mongo db client
+* DB population files are stored on the createDB file
 
-## Development server
+Make sure you install the node.js server and Mongo DB sofware from the side.  Ensure your path variable contains the execution path of the node.js and mongo binary.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+To execute the server db and then the node server with the following commands:
 
-## Code scaffolding
+//create the db file directory
+0. md db
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+//Starts the DB server on port 3000
+1. start.toDoSample.cmd
 
-## Build
+//populate the DB server with sample data
+2. startdbClient.toDoSample.cmd
+>load ('createDB/createPostcardSampleData.js');
+>load ('createDB/createAdminUser.js');
+>exit
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+//install npm packages
+3. npm install
 
-## Running unit tests
+//Compile Node/Express Server.  You may need to go to all subdirectories and compile the ts files.
+4. tsc AppServre.ts
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+//Execute Node/Express server on port 8080
+5. node AppServer.js 
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+To test server #3, try the following URL on the browser, while the server is running:
+* http://localhost:8080/
+* http://localhost:8080/app/list
+* http://localhost:8080/app/list/1
