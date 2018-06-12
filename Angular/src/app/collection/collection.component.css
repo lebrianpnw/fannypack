@@ -14,10 +14,10 @@
 
 .postCardContent {
     width: 500px;
-    height: 130px;
+    height: 110px;
     position: relative;
     background-color: white;
-    margin-left: 50px;
+    margin-left: 70px;
     padding: 15px;
     margin-top: 20px;
 }
@@ -55,3 +55,13 @@
   }
 
 
+  #collectionTitle {
+    font-size: 20px;
+    text-decoration: underline;
+    font-weight: bold;
+    color: #1e5270;
+}
+
+#label {
+    font-style: italic;
+}

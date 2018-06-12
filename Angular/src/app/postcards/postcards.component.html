@@ -1,18 +1,16 @@
 <div class="postCardContainer">
     <div class="postCardRow" >
         <div class="postCardFormat" style="text-align: center" *ngFor="let result of postcards">
-            <a [routerLink]="['/postcards/' + result.postcardID]" target="_blank">
+            <a [routerLink]="['/postcards/' + result.postcardID]">
             <div class="postCardContent">
             <img src="{{result.imageURL}}" width="350px" height="350px" id="postcardImage"/>
-                <div class="overlay" opacity ="0.5">        
-        
-                    <!--<p>{{result.postcardID}}</p> -->
-                    <p>{{result.title}}</p>
-                    <!--<p>{{result.description}}</p>
-                    <p>Rating: {{result.rating}}</p>
-                    <p>Cost: {{result.cost}}</p>-->
-                    <p>Location: {{result.activityLocation}}</p>
-                    <p>City: {{result.activityCity}}</p>
+                <div class="overlay">
+                    <p id = "postcardTitle">{{result.title}}</p>
+                    <p>{{result.description}}</p>
+                    <p><span id = "label">Rating:</span> {{result.rating}}</p>
+                    <p><span id = "label">Cost:</span> {{result.cost}}</p>
+                    <p><span id = "label">Location:</span> {{result.activityLocation}}</p>
+                    <p><span id = "label">City:</span> {{result.activityCity}}</p>
                 </div>
             </div>
             </a>

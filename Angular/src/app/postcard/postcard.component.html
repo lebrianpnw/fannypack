@@ -1,16 +1,16 @@
 <div class="postCardContainer">
-        <div class="postCardRow" >
-            <div class="postCardFormat" style="text-align: center">
-                <img src={{imageURL}} width="350px" height="350px">
-                <div class="postCardContent">
-                        <p>{{postcardID}}</p>
-                        <p>{{title}}</p>
-                        <p>{{description}}</p>
-                        <p>Rating: {{rating}}</p>
-                        <p>Cost: {{cost}}</p>
-                        <p>Location: {{activityLocation}}</p>
-                        <p>City: {{activityCity}}</p>
-                    </div>
-            </div>
+    <div class="postCardRow" >
+        <div class="postCardFormat" style="text-align: center">
+            <img src={{imageURL}} width="350px" height="350px">
+            <div class="postCardContent">
+                    <!--<p>{{postcardID}}</p>-->
+                    <p id = "postcardTitle">{{title}}</p>
+                    <p>{{description}}</p>
+                    <p><span id = "label">Rating:</span> {{rating}}</p>
+                    <p><span id = "label">Cost:</span> {{cost}}</p>
+                    <p><span id = "label">Location:</span> {{activityLocation}}</p>
+                    <p><span id = "label">City:</span> {{activityCity}}</p>
+                </div>
         </div>
     </div>
+</div>
