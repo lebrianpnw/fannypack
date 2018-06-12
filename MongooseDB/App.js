@@ -96,7 +96,7 @@ var App = /** @class */ (function () {
         });
         router.get('/app/postcards/', this.validateAuth, function (req, res) {
             console.log('Query All postcards');
-            _this.Postcards.retrieveAllPostcards(res);
+            _this.Postcards.retrieveAllPostcards(res, { owner: _this.googlePassportObj.email });
         });
         router.get('/app/collections/', this.validateAuth, function (req, res) {
             console.log('Query All collections');

@@ -129,7 +129,7 @@ class App {
    
     router.get('/app/postcards/', this.validateAuth, (req, res) => {
         console.log('Query All postcards');
-        this.Postcards.retrieveAllPostcards(res, { 'google.id' : profile.id });
+        this.Postcards.retrieveAllPostcards(res, { owner: this.googlePassportObj.email });
     });
 
     router.get('/app/collections/', this.validateAuth, (req, res) => {

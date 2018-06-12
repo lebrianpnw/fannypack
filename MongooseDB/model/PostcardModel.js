@@ -26,8 +26,8 @@ var PostcardModel = /** @class */ (function () {
     PostcardModel.prototype.createModel = function () {
         this.model = mongooseConnection.model("Postcards", this.schema);
     };
-    PostcardModel.prototype.retrieveAllPostcards = function (response) {
-        var query = this.model.find({});
+    PostcardModel.prototype.retrieveAllPostcards = function (response, filter) {
+        var query = this.model.find({ owner: filter });
         query.exec(function (err, itemArray) {
             response.json(itemArray);
         });
