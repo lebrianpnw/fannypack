@@ -4,7 +4,8 @@
             <a [routerLink]="['/postcards/' + result.postcardID]" target="_blank">
             <div class="postCardContent">
             <img src="{{result.imageURL}}" width="350px" height="350px" id="postcardImage"/>
-                <div class="overlay">
+                <div class="overlay">        
+                    <p>{{result.email}}</p>         
                     <p>{{result.postcardID}}</p>
                     <p>{{result.title}}</p>
                     <p>{{result.description}}</p>

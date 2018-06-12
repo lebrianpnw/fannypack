@@ -71,7 +71,6 @@ class App {
         )
     );
 
-
     router.use(function (req, res, next) {
         res.header("Access-Control-Allow-Origin", "*");
         res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -102,11 +101,6 @@ class App {
       this.Postcards.retrievePostcardDetails(res, {postcardID: id});
    });
 
-   router.get('/app/postcards/:owner', this.validateAuth, (req, res) => {
-        var id = req.params.owner;
-        console.log('Query single list with id: ' + id);
-        this.Postcards.retrievePostcardDetails(res, {owner: id});
-    });
 
    router.post('/app/collections/', this.validateAuth, (req, res) => {
     console.log(req.body);
