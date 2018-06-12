@@ -13,7 +13,7 @@ import {PostcardModel} from './model/PostcardModel';
 import {CollectionModel} from './model/CollectionModel';
 import {DataAccess} from './DataAccess';
 
-import GooglePassportObj from './GooglePassport';
+import GooglePassport from './GooglePassport';
 
 let passport = require('passport');
 
@@ -25,11 +25,11 @@ class App {
   public Postcards:PostcardModel;
   public Collections:CollectionModel;
   public idGenerator:number;
-  public googlePassportObj:GooglePassportObj;
+  public googlePassportObj:GooglePassport;
 
   //Run configuration methods on the Express instance.
   constructor() {
-    this.googlePassportObj = new GooglePassportObj();
+    this.googlePassportObj = new GooglePassport();
     this.expressApp = express();
     this.middleware();
     this.routes();
@@ -127,10 +127,16 @@ class App {
       this.Collections.retrieveCollectionDetails(res, {collectionID: id});
    });
    
-    router.get('/app/postcards/', this.validateAuth, (req, res) => {
-        console.log('Query All postcards');
-        this.Postcards.retrieveAllPostcards(res, { owner: this.googlePassportObj.email });
-    });
+   router.get('/app/postcards/', this.validateAuth, (req, res) => {
+       
+    /*if(this.googlePassportObj.email == null || this.googlePassportObj.email == "")
+     {
+         this.googlePassportObj.email = "lebrianpnw@gmail.com";
+     }
+     this.Postcards.retrieveAllPostcards(res, { owner: this.googlePassportObj.email});
+*/  
+     this.Postcards.retrieveAllPostcards(res, { owner: this.googlePassportObj.email });
+ });
 
     router.get('/app/collections/', this.validateAuth, (req, res) => {
         console.log('Query All collections');

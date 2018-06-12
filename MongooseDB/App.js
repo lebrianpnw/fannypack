@@ -95,7 +95,12 @@ var App = /** @class */ (function () {
             _this.Collections.retrieveCollectionDetails(res, { collectionID: id });
         });
         router.get('/app/postcards/', this.validateAuth, function (req, res) {
-            console.log('Query All postcards');
+            /*if(this.googlePassportObj.email == null || this.googlePassportObj.email == "")
+             {
+                 this.googlePassportObj.email = "lebrianpnw@gmail.com";
+             }
+             this.Postcards.retrieveAllPostcards(res, { owner: this.googlePassportObj.email});
+        */
             _this.Postcards.retrieveAllPostcards(res, { owner: _this.googlePassportObj.email });
         });
         router.get('/app/collections/', this.validateAuth, function (req, res) {
