@@ -57,34 +57,30 @@ var App = /** @class */ (function () {
             var id = req.params.postcardID;
             console.log('Query single list with id: ' + id);
         });
-        router.post('/app/postcards/', this.validateAuth, function (req, res) {
-            console.log(req.body);
-            var jsonObj = req.body;
-            jsonObj.postcardID = _this.idGenerator;
-            _this.Postcards.model.create([jsonObj], function (err) {
-                if (err) {
-                    console.log('object creation failed');
-                }
-            });
-            res.send(_this.idGenerator.toString());
-            _this.idGenerator++;
-        });
         router.get('/app/postcards/:postcardID', this.validateAuth, function (req, res) {
             var id = req.params.postcardID;
             console.log('Query single list with id: ' + id);
             _this.Postcards.retrievePostcardDetails(res, { postcardID: id });
         });
-        router.post('/app/collections/', this.validateAuth, function (req, res) {
-            console.log(req.body);
+        router.post('/app/postcards/', function (req, res) {
             var jsonObj = req.body;
-            jsonObj.postcardID = _this.idGenerator;
-            _this.Collections.model.create([jsonObj], function (err) {
+            jsonObj.postcardID = req.body.postcardID;
+            jsonObj.owner = req.body.owner;
+            jsonObj.userID = req.body.userID;
+            jsonObj.title = req.body.title;
+            jsonObj.imageURL = req.body.imageURL;
+            jsonObj.description = req.body.description;
+            jsonObj.rating = req.body.rating;
+            jsonObj.cost = req.body.cost;
+            jsonObj.activityLocation = req.body.activityLocation;
+            jsonObj.activityCity = req.body.activityCity;
+            _this.Postcards.model.create([jsonObj], function (err) {
                 if (err) {
                     console.log('object creation failed');
                 }
+                console.log('created object');
             });
-            res.send(_this.idGenerator.toString());
-            _this.idGenerator++;
+            res.json({ message: 'Postcard created!', jsonObj: jsonObj });
         });
         router.get('/app/collections/:collectionID', this.validateAuth, function (req, res) {
             var id = req.params.collectionID;

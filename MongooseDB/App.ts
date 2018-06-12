@@ -88,18 +88,6 @@ class App {
         console.log('Query single list with id: ' + id);
     });
 
-    router.post('/app/postcards/', this.validateAuth, (req, res) => {
-        console.log(req.body);
-        var jsonObj = req.body;
-        jsonObj.postcardID = this.idGenerator;
-        this.Postcards.model.create([jsonObj], (err) => {
-            if (err) {
-                console.log('object creation failed');
-            }
-        });
-        res.send(this.idGenerator.toString());
-        this.idGenerator++;
-    });
 
   router.get('/app/postcards/:postcardID', this.validateAuth, (req, res) => {
       var id = req.params.postcardID;
@@ -107,19 +95,28 @@ class App {
       this.Postcards.retrievePostcardDetails(res, {postcardID: id});
    });
 
-
-   router.post('/app/collections/', this.validateAuth, (req, res) => {
-    console.log(req.body);
+   router.post('/app/postcards/', (req, res) => {
     var jsonObj = req.body;
-    jsonObj.postcardID = this.idGenerator;
-    this.Collections.model.create([jsonObj], (err) => {
+    jsonObj.postcardID = req.body.postcardID;
+    jsonObj.owner = req.body.owner;
+    jsonObj.userID = req.body.userID;
+    jsonObj.title = req.body.title;
+    jsonObj.imageURL = req.body.imageURL;
+    jsonObj.description = req.body.description;
+    jsonObj.rating = req.body.rating;
+    jsonObj.cost = req.body.cost;
+    jsonObj.activityLocation = req.body.activityLocation;
+    jsonObj.activityCity = req.body.activityCity;
+
+
+    this.Postcards.model.create([jsonObj], (err) => {
         if (err) {
             console.log('object creation failed');
         }
+        console.log('created object')
     });
-    res.send(this.idGenerator.toString());
-    this.idGenerator++;
-	});
+    res.json({ message: 'Postcard created!', jsonObj});
+    });
 
 	router.get('/app/collections/:collectionID', this.validateAuth, (req, res) => {
       var id = req.params.collectionID;
