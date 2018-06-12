@@ -40,8 +40,6 @@ class PostcardModel {
         query.exec( (err, itemArray) => {
             response.json(itemArray);
         });
-
-        response.json = response.json + "email" + filter;
     }
 
     public retrievePostcardDetails(response:any, filter:Object)

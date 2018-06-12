@@ -49,7 +49,13 @@ class App {
   }
 
   private validateAuth(req, res, next):void {
-    if (req.isAuthenticated()) { console.log("user is authenticated"); return next(); }
+    if (req.isAuthenticated()) 
+    { 
+        console.log("user is authenticated"); 
+        console.log("user id: " + req.user.id);
+        console.log("email: " + req.user.emails[0].value);
+        return next(); 
+    }
     console.log("user is not authenticated");
     res.redirect('/');
   }

@@ -34,6 +34,8 @@ var App = /** @class */ (function () {
     App.prototype.validateAuth = function (req, res, next) {
         if (req.isAuthenticated()) {
             console.log("user is authenticated");
+            console.log("user id: " + req.user.id);
+            console.log("email: " + req.user.emails[0].value);
             return next();
         }
         console.log("user is not authenticated");
@@ -71,11 +73,6 @@ var App = /** @class */ (function () {
             var id = req.params.postcardID;
             console.log('Query single list with id: ' + id);
             _this.Postcards.retrievePostcardDetails(res, { postcardID: id });
-        });
-        router.get('/app/postcards/:owner', this.validateAuth, function (req, res) {
-            var id = req.params.owner;
-            console.log('Query single list with id: ' + id);
-            _this.Postcards.retrievePostcardDetails(res, { owner: id });
         });
         router.post('/app/collections/', this.validateAuth, function (req, res) {
             console.log(req.body);
